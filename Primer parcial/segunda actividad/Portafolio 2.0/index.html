@@ -1,35 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>David Cevallos - Portafolio</title>
-</head>
-<body>
-    <header>
-        <nav id="navbar">
-            <div class="container">
-                <a href="#inicio" class="logo"><img src="./assets/D_logo.png" alt="Mi logo"width="150"></a>
-                <ul>
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./pages/about.html">Sobre mi</a></li>
-                    <li><a href="./pages/projects.html">Proyectos</a></li>
-                    <li><a href="./pages/contact.html">Contactame</a></li>
-                </ul>
-            </div>
-        </nav>
+    <link href="/dist/output.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <header class="bg-white shadow-md p-4 flex items-center justify-between">
+      <div class="flex items-center">
+        <img src="./assets/D_logo.png" alt="Mi logo" class="w-24" />
+        <h1 class="ml-4 text-xl font-bold">David Cevallos</h1>
+      </div>
     </header>
-    <main>
-        <section id="inicio" class="hero">
-            <div class="container">
-                <h1>Hola, soy <span> David Cevallos</span></h1>
-                <p>Desarrollador web y amante de la tecnología.</p>
-            </div>
-        </section>
-    </main>
-    <footer>
-    <p>&copy; 2025 David Cevallos. Todos los derechos reservados.</p>
-    </footer>
-</body>
 
+    <div class="grid grid-cols-12 min-h-screen">
+      
+      <nav class="col-span-3 bg-blue-600 text-white p-6">
+        <ul class="space-y-4">
+          <li><a href="#inicio" class="hover:text-yellow-300">Inicio</a></li>
+          <li><a href="#sobre" class="hover:text-yellow-300">Sobre mí</a></li>
+          <li><a href="#proyectos" class="hover:text-yellow-300">Proyectos</a></li>
+          <li><a href="#contacto" class="hover:text-yellow-300">Contáctame</a></li>
+        </ul>
+      </nav>
+
+      <main class="col-span-9 p-8 space-y-8">
+        <section id="inicio" class="bg-white p-6 rounded shadow-md">
+          <h2 class="text-2xl font-semibold">Hola, soy <span class="text-blue-600">David Cevallos</span></h2>
+          <p class="mt-2">Desarrollador web y amante de la tecnología.</p>
+        </section>
+
+        <section id="proyectos" class="grid grid-cols-3 gap-4">
+          <article class="bg-white p-4 shadow rounded">Proyecto 1</article>
+          <article class="bg-white p-4 shadow rounded">Proyecto 2</article>
+          <article class="bg-white p-4 shadow rounded">Proyecto 3</article>
+        </section>
+
+        <section id="contacto" class="bg-white p-6 rounded shadow-md">
+          <h3 class="text-xl font-bold mb-4">Contáctame</h3>
+          <form class="space-y-4">
+            <input type="text" placeholder="Nombre" class="w-full border p-2 rounded" />
+            <input type="email" placeholder="Correo" class="w-full border p-2 rounded" />
+            <textarea placeholder="Mensaje" class="w-full border p-2 rounded"></textarea>
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Enviar</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+      <p>&copy; 2025 David Cevallos. Todos los derechos reservados.</p>
+    </footer>
+  </body>
 </html>
