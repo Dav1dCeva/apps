@@ -6,6 +6,7 @@
   <link href="/src/index.css" rel="stylesheet">
   <title>David Cevallos - Portafolio</title>
 </head>
+
 <body class="bg-gray-100 text-gray-800 font-sans">
 
   <header class="bg-white shadow-md p-4 flex items-center justify-between">
@@ -17,22 +18,22 @@
 
   <div class="grid grid-cols-12 gap-0">
     
-    <nav class="col-span-3 bg-green-400 text-black p-6 min-h-screen">
+    <nav class="col-span-3 bg-green-500 text-white p-6 min-h-screen">
       <ul class="space-y-4 text-lg">
-        <li><a href="./index.html" class="hover:text-yellow-300">Inicio</a></li>
-        <li><a href="#projects" class="hover:text-yellow-300">Proyectos</a></li>
-        <li><a href="./pages/contact.html" class="hover:text-yellow-300">Contáctame</a></li>
+        <li><a href="#inicio" class="hover:text-yellow-300 text-4xl font-mono">Inicio</a></li>
+        <li><a href="#proyectos" class="hover:text-yellow-300 text-4xl font-mono">Proyectos</a></li>
+        <li><a href="#contacto" class="hover:text-yellow-300 text-4xl font-mono">Contáctame</a></li>
       </ul>
     </nav>
 
     <main class="col-span-9 p-8 space-y-8">
       
-      <section id="inicio" class="bg-green-500 p-6 rounded shadow-md">
-        <h2 class="text-2xl text-white font-semibold mb-2">Hola Soy David Cevallos</span></h2>
+      <section id="inicio" class="bg-gray-500 p-6 rounded shadow-md">
+        <h2 class="text-2xl text-white font-semibold mb-2">Hola Soy David Cevallos</h2>
         <p class="text-white">Estudiante de desarrollo web y amante de la tecnología.</p>
       </section>
 
-      <section class="bg-green-500 p-6 rounded shadow-md">
+      <section class="bg-red-500 p-6 rounded shadow-md">
         <h2 class="text-xl text-white font-semibold mb-4">Tecnologías que manejo</h2>
         <div class="flex flex-wrap gap-4">
           <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">HTML</span>
@@ -44,11 +45,11 @@
         </div>
       </section>
 
-      <section class="bg-green-500 p-6 rounded shadow-md text-center italic text-white">
+      <section class="bg-cyan-600 p-6 rounded shadow-md text-center italic text-white">
         <p>"Planta vaca para que coseches vacaneria"</p>
       </section>
 
-      <section class="bg-green-500 p-6 rounded shadow-md">
+      <section class="bg-purple-500 p-6 rounded shadow-md">
         <h2 class="text-4xl text-white font-semibold mb-4">Fortalesas</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div>
@@ -65,11 +66,49 @@
           </div>
         </div>
       </section>
+    <section id="proyectos" class="bg-white p-6 rounded shadow-md">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Proyectos Destacados</h2>
+    <p class="text-center text-gray-600 mb-6">Aquí puedes ver algunos de mis proyectos más importantes.</p>
 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <a href="https://github.com/Dav1dCeva/django-aut-crud.git" target="_blank" class="block bg-green-500 p-4 rounded hover:shadow-lg transition">
+        <img src="./assets/django_icon.png" alt="CRUD Django" class="w-24 mx-auto mb-4">
+        <h3 class="text-lg font-bold text-center mb-2">CRUD Django</h3>
+        <p class="text-sm text-gray-600 text-center">Proyecto CRUD utilizando Django para gestionar datos básicos.</p>
+        </a>
+
+        <a href="https://github.com/Dav1dCeva/Cine.git" target="_blank" class="block bg-yellow-400 p-4 rounded hover:shadow-lg transition">
+        <img src="./assets/Cinema_logo.png" alt="Sistema de Cine" class="w-24 mx-auto mb-4">
+        <h3 class="text-lg font-bold text-center mb-2">Sistema de Cine</h3>
+        <p class="text-sm text-gray-600 text-center">Sistema para elegir películas, asientos y administración de funciones.</p>
+        </a>
+
+        <a href="https://github.com/Dav1dCeva/Hospital.git" target="_blank" class="block bg-orange-400 p-4 rounded hover:shadow-lg transition">
+        <img src="./assets/Hospital_logo.png" alt="Sistema de Hospital" class="w-24 mx-auto mb-4">
+        <h3 class="text-lg font-bold text-center mb-2">Sistema de Hospital</h3>
+        <p class="text-sm text-gray-600 text-center">Gestión de pacientes, doctores, historial clínico y citas médicas.</p>
+        </a>
+    </div>
+    </section>
+
+        <section id="contacto" class="bg-blue-200 p-6 rounded shadow-md">
+            <h3 class="text-xl font-bold mb-4">Contáctame</h3>
+            <form class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" placeholder="Nombre completo" required class="border p-2 rounded w-full" />
+                <input type="email" placeholder="Correo electrónico" required class="border p-2 rounded w-full" />
+            </div>
+            <input type="text" placeholder="Asunto" class="border p-2 rounded w-full" />
+            <textarea placeholder="Tu mensaje" rows="6" class="border p-2 rounded w-full"></textarea>
+            <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Enviar mensaje</button>
+            </form>
+        </section>
     </main>
   </div>
 
-  <!-- Footer -->
+  
+
   <footer class="bg-gray-800 text-white text-center p-4">
     <p>&copy; 2025 David Cevallos. Todos los derechos reservados.</p>
   </footer>
