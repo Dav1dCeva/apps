@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet">
+  <title>Contáctame - David Cevallos</title>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md p-4 flex items-center justify-between">
+    <div class="flex items-center">
+      <img src="../assets/D_logo.png" alt="Mi logo" class="w-24">
+      <h1 class="ml-4 text-2xl font-bold">David Cevallos</h1>
+    </div>
+  </header>
+
+  <div class="grid grid-cols-12 gap-0">
+    
+    <nav class="col-span-3 bg-blue-700 text-white p-6 min-h-screen">
+      <ul class="space-y-4 text-lg">
+        <li><a href="../index.html" class="hover:text-yellow-300">Inicio</a></li>
+        <li><a href="./projects.html" class="hover:text-yellow-300">Proyectos</a></li>
+        <li><a href="./contact.html" class="hover:text-yellow-300">Contáctame</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main class="col-span-9 p-8 space-y-8">
+      
+      <!-- Presentación -->
+      <section class="bg-white p-6 rounded shadow-md">
+        <h2 class="text-2xl font-semibold mb-2">¡Hablemos!</h2>
+        <p class="text-gray-700">¿Tienes alguna pregunta, colaboración o proyecto en mente? No dudes en escribirme.</p>
+      </section>
+
+      <!-- Formulario -->
+      <section class="bg-white p-6 rounded shadow-md">
+        <h3 class="text-xl font-bold mb-4">Formulario de contacto</h3>
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Nombre completo" required class="border p-2 rounded w-full" />
+            <input type="email" placeholder="Correo electrónico" required class="border p-2 rounded w-full" />
+          </div>
+          <input type="text" placeholder="Asunto" class="border p-2 rounded w-full" />
+          <textarea placeholder="Tu mensaje" rows="6" class="border p-2 rounded w-full"></textarea>
+          <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Enviar mensaje</button>
+        </form>
+      </section>
+
+      <!-- Datos de contacto -->
+      <section class="bg-white p-6 rounded shadow-md">
+        <h3 class="text-xl font-bold mb-4">También puedes encontrarme en:</h3>
+        <ul class="space-y-2">
+          <li><a href="mailto:david@example.com" class="text-blue-600 hover:underline">📧 david@example.com</a></li>
+          <li><a href="https://github.com/tuusuario" target="_blank" class="text-blue-600 hover:underline">💻 GitHub</a></li>
+          <li><a href="https://linkedin.com/in/tuusuario" target="_blank" class="text-blue-600 hover:underline">🔗 LinkedIn</a></li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4 mt-8">
+    <p>&copy; 2025 David Cevallos. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
