@@ -11,4 +11,5 @@ export interface CreateBarRequest {
   nombre: string;
   ubicacion: string;
   stack: string;
+  disponibilidad: boolean;
 } 

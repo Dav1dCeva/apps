@@ -1,6 +1,7 @@
 import ProductoList from './components/Catalogo';
 import UsuarioList from './components/UsuarioList';
 import BarList from './components/BarList';
+import './App.css';
 
 interface AppProps {
   title: string;
