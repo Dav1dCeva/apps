@@ -44,7 +44,7 @@ export const UsuarioService = {
       
       const usuario = await response.json();
       if (usuario.length === 0) {
-        throw new Error('Usuario no encontrado');
+        throw new Error('Usuario no encontrado')
       }
       
       return usuario[0];
