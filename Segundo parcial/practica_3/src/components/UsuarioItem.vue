@@ -21,6 +21,7 @@ const handleRemove = () => {
 }
 </script>
 
+
 <template>
   <div 
     class="usuario-item"
@@ -44,7 +45,12 @@ const handleRemove = () => {
         {{ props.usuario.nombre }}
       </label>
     </div>
-
+    <div class="usuario-detalles">
+      <p><strong>Dirección:</strong> {{ props.usuario.direccion }}</p>
+      <p><strong>Teléfono:</strong> {{ props.usuario.telefono }}</p>
+      <p><strong>Email:</strong> {{ props.usuario.email }}</p>
+      <p><strong>Disponible:</strong> {{ props.usuario.disponible ? 'Sí' : 'No' }}</p>
+    </div>
     <button
       @click="handleRemove"
       class="remove-button"
@@ -59,13 +65,15 @@ const handleRemove = () => {
 <style scoped>
 .usuario-item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 1rem;
   background-color: #f8f9fa;
   border: 1px solid #e9ecef;
   border-radius: 6px;
   transition: all 0.3s ease;
+  margin-bottom: 0.5rem;
+  position: relative;
 }
 
 .usuario-item:hover {
@@ -112,6 +120,19 @@ const handleRemove = () => {
   font-style: italic;
 }
 
+.usuario-detalles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  color: #34495e;
+  margin-left: 2rem;
+}
+
+.usuario-detalles p {
+  margin: 0;
+}
+
 .remove-button {
   background: none;
   border: none;
@@ -121,6 +142,9 @@ const handleRemove = () => {
   border-radius: 4px;
   transition: all 0.3s ease;
   opacity: 0.6;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .remove-button:hover {
@@ -134,32 +158,22 @@ const handleRemove = () => {
   outline-offset: 2px;
 }
 
-.usuario-item {
-  animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (max-width: 480px) {
   .usuario-item {
     padding: 0.75rem;
   }
-  
   .usuario-nombre {
     font-size: 0.9rem;
   }
-  
+  .usuario-detalles {
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-left: 0;
+  }
   .remove-button {
     font-size: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
   }
 }
 </style>

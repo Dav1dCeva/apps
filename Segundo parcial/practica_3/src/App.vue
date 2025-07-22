@@ -1,50 +1,32 @@
 <script setup lang="ts">
-import UsuarioView from './views/usuario_view.vue'
+import { ref } from 'vue'
+import UsuariosView from './views/usuario_view.vue'
+import BaresView from './views/bar_view.vue'
+
+const vistaActiva = ref<'usuarios' | 'bares'>('usuarios')
 </script>
 
 <template>
-  <div id="app">
-    <UsuarioView />
+  <div>
+    <nav class="nav">
+      <button @click="vistaActiva = 'usuarios'">👤 Usuarios</button>
+      <button @click="vistaActiva = 'bares'">🍻 Bares</button>
+    </nav>
+
+    <UsuariosView v-if="vistaActiva === 'usuarios'" />
+    <BaresView v-if="vistaActiva === 'bares'" />
   </div>
 </template>
 
-<style>
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  padding: 1rem;
-}
-
-#app {
-  min-height: 100vh;
+<style scoped>
+.nav {
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  padding-top: 2rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
-
-button:focus,
-input:focus {
-  outline: 2px solid #3498db;
-  outline-offset: 2px;
-}
-
-button,
-input,
-.task-item {
-  transition: all 0.3s ease;
+button {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
 }
 </style>

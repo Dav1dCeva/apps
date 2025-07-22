@@ -1,58 +1,59 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const newUsuarioText = ref('')
+const nombre = ref('')
+const direccion = ref('')
+const telefono = ref('')
+const email = ref('')
+const disponible = ref(true)
 
 const emit = defineEmits<{
-  'add-usuario': [usuarioText: string]
+  (e: 'add-usuario', usuario: {
+    nombre: string,
+    direccion: string,
+    telefono: string,
+    email: string,
+    disponible: boolean
+  }): void
 }>()
 
-const handleSubmit = () => {
-  const trimmedText = newUsuarioText.value.trim()
-
-  if (trimmedText === '') {
-    return
-  }
-
-  emit('add-usuario', trimmedText)
-
-  newUsuarioText.value = ''
+const submit = () => {
+  if (!nombre.value) return
+  emit('add-usuario', {
+    nombre: nombre.value,
+    direccion: direccion.value,
+    telefono: telefono.value,
+    email: email.value,
+    disponible: disponible.value
+  })
+  nombre.value = ''
+  direccion.value = ''
+  telefono.value = ''
+  email.value = ''
+  disponible.value = true
 }
 
-const handleKeyPress = (event: KeyboardEvent) => {
-  if (event.key === 'Enter') {
-    handleSubmit()
-  }
-}
 </script>
 
 <template>
   <div class="add-usuario-form">
-    <h2>Agregar Nuevo Usuario</h2>
-    
+    <h2>Registrar Nuevo Usuario</h2>
     <div class="form-container">
-
-      <input
-        v-model.trim="newUsuarioText"
-        type="text"
-        placeholder="Escribe el nombre del usuario..."
-        class="usuario-input"
-        @keypress="handleKeyPress"
-        aria-label="Nuevo usuario"
-      />
-
-      <button
-        @click="handleSubmit"
-        :disabled="newUsuarioText.trim() === ''"
-        class="add-button"
-        type="button"
-      >
-        ➕ Agregar
+      <input v-model="nombre" type="text" placeholder="Nombre..." class="usuario-input" required />
+      <input v-model="direccion" type="text" placeholder="Dirección..." class="usuario-input" required />
+      <input v-model="telefono" type="text" placeholder="Teléfono..." class="usuario-input" required />
+      <input v-model="email" type="email" placeholder="Email..." class="usuario-input" required />
+      <label>
+        <input v-model="disponible" type="checkbox" />
+        Disponible
+      </label>
+      <button @click="submit" class="add-button" type="button"
+        :disabled="!nombre || !direccion || !telefono || !email">
+        ➕ Registrar Usuario
       </button>
     </div>
-
     <p class="hint">
-      💡 Presiona Enter o haz clic en "Agregar" para crear el usuario
+      💡 Todos los campos son obligatorios
     </p>
   </div>
 </template>
@@ -70,12 +71,12 @@ const handleKeyPress = (event: KeyboardEvent) => {
 
 .form-container {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.75rem;
   margin-bottom: 0.5rem;
 }
 
 .usuario-input {
-  flex: 1;
   padding: 0.75rem;
   border: 2px solid #ecf0f1;
   border-radius: 6px;
