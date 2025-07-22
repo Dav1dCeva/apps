@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import type { Bar } from '../types/Bar'
 import AddBarForm from '../components/AddBarForm.vue'
 import BarList from '../components/BarList.vue'
@@ -50,6 +50,8 @@ const removeBar = (barId: number) => {
     bares.value.splice(index, 1)
   }
 }
+
+const baresAbiertosCount = computed(() => bares.value.filter(bar => bar.abierto).length)
 </script>
 
 <template>

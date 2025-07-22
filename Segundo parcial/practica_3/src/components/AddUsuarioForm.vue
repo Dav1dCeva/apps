@@ -43,10 +43,10 @@ const submit = () => {
       <input v-model="direccion" type="text" placeholder="Dirección..." class="usuario-input" required />
       <input v-model="telefono" type="text" placeholder="Teléfono..." class="usuario-input" required />
       <input v-model="email" type="email" placeholder="Email..." class="usuario-input" required />
-      <label>
-        <input v-model="disponible" type="checkbox" />
-        Disponible
-      </label>
+      <div class="checkbox-row">
+        <input id="disponible" v-model="disponible" type="checkbox" class="usuario-checkbox" />
+        <label for="disponible">Disponible</label>
+      </div>
       <button @click="submit" class="add-button" type="button"
         :disabled="!nombre || !direccion || !telefono || !email">
         ➕ Registrar Usuario
@@ -132,5 +132,17 @@ const submit = () => {
   .add-button {
     width: 100%;
   }
+}
+.checkbox-row {
+  color : #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.usuario-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #3498db;
 }
 </style>

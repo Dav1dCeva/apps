@@ -2,8 +2,9 @@
 import { ref } from 'vue'
 import UsuariosView from './views/usuario_view.vue'
 import BaresView from './views/bar_view.vue'
+import BebidasView from './views/bebida_view.vue'
 
-const vistaActiva = ref<'usuarios' | 'bares'>('usuarios')
+const vistaActiva = ref<'usuarios' | 'bares' | 'bebidas'>('usuarios')
 </script>
 
 <template>
@@ -11,10 +12,12 @@ const vistaActiva = ref<'usuarios' | 'bares'>('usuarios')
     <nav class="nav">
       <button @click="vistaActiva = 'usuarios'">👤 Usuarios</button>
       <button @click="vistaActiva = 'bares'">🍻 Bares</button>
+      <button @click="vistaActiva = 'bebidas'">🥤 Bebidas</button>
     </nav>
 
     <UsuariosView v-if="vistaActiva === 'usuarios'" />
     <BaresView v-if="vistaActiva === 'bares'" />
+    <BebidasView v-if="vistaActiva === 'bebidas'" />
   </div>
 </template>
 

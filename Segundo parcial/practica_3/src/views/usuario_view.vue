@@ -5,26 +5,31 @@ import AddUsuarioForm from '../components/AddUsuarioForm.vue'
 import UsuarioList from '../components/UsuarioList.vue'
 
 const usuarios = ref<usuario[]>([
-  { id: 1, nombre: 'Juan Pérez', estado: true, direccion: 'Calle A 123', telefono: '0999999999', email: 'juan@example.com', disponible: true },
-  { id: 2, nombre: 'Ana Gómez', estado: false, direccion: 'Calle B 456', telefono: '0988888888', email: 'ana@example.com', disponible: false },
-  { id: 3, nombre: 'Luis Torres', estado: true, direccion: 'Calle C 789', telefono: '0977777777', email: 'luis@example.com', disponible: true }
+  { id: 1, nombre: 'Juan Pérez', direccion: 'Calle A 123', telefono: '0999999999', email: 'juan@example.com', disponible: true },
+  { id: 2, nombre: 'Ana Gómez', direccion: 'Calle B 456', telefono: '0988888888', email: 'ana@example.com', disponible: false },
+  { id: 3, nombre: 'Luis Torres', direccion: 'Calle C 789', telefono: '0977777777', email: 'luis@example.com', disponible: true }
 ])
 
 const nextId = ref(4)
 
 const usuariosActivosCount = computed(() => {
-  return usuarios.value.filter(usuario => usuario.estado).length
+  return usuarios.value.filter(usuario => usuario.disponible).length
 })
 
-const addUsuario = (usuarioNombre: string) => {
+const addUsuario = (nuevo: {
+  nombre: string,
+  direccion: string,
+  telefono: string,
+  email: string,
+  disponible: boolean
+}) => {
   const nuevoUsuario: usuario = {
     id: nextId.value++,
-    nombre: usuarioNombre,
-    estado: true,
-    direccion: '',
-    telefono: '',
-    email: '',
-    disponible: true
+    nombre: nuevo.nombre,
+    direccion: nuevo.direccion,
+    telefono: nuevo.telefono,
+    email: nuevo.email,
+    disponible:!!nuevo.disponible
   }
   usuarios.value.push(nuevoUsuario)
 }
@@ -32,7 +37,7 @@ const addUsuario = (usuarioNombre: string) => {
 const toggleEstado = (usuarioId: number) => {
   const user = usuarios.value.find(u => u.id === usuarioId)
   if (user) {
-    user.estado = !user.estado
+    user.disponible = !user.disponible
   }
 }
 

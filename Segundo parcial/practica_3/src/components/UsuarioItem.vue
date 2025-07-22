@@ -8,12 +8,12 @@ interface Props {
 const props = defineProps<Props>()
 
 const emit = defineEmits<{
-  'toggle-estado': [usuarioId: number]
+  'toggle-disponible': [usuarioId: number]
   'remove-usuario': [usuarioId: number]
 }>()
 
-const handleToggleEstado = () => {
-  emit('toggle-estado', props.usuario.id)
+const handleToggleDisponible = () => {
+  emit('toggle-disponible', props.usuario.id)
 }
 
 const handleRemove = () => {
@@ -25,22 +25,22 @@ const handleRemove = () => {
 <template>
   <div 
     class="usuario-item"
-    :class="{ 'inactivo': !props.usuario.estado }"
+    :class="{ 'inactivo': !props.usuario.disponible }"
   >
     <div class="usuario-content">
       <input
         type="checkbox"
-        :checked="props.usuario.estado"
-        @change="handleToggleEstado"
+        :checked="props.usuario.disponible"
+        @change="handleToggleDisponible"
         class="usuario-checkbox"
         :id="`usuario-${props.usuario.id}`"
-        :aria-label="`Marcar usuario '${props.usuario.nombre}' como ${props.usuario.estado ? 'inactivo' : 'activo'}`"
+        :aria-label="`Marcar usuario '${props.usuario.nombre}' como ${props.usuario.disponible ? 'inactivo' : 'activo'}`"
       />
 
       <label 
         :for="`usuario-${props.usuario.id}`"
         class="usuario-nombre"
-        @click="handleToggleEstado"
+        @click="handleToggleDisponible"
       >
         {{ props.usuario.nombre }}
       </label>
@@ -49,7 +49,7 @@ const handleRemove = () => {
       <p><strong>Dirección:</strong> {{ props.usuario.direccion }}</p>
       <p><strong>Teléfono:</strong> {{ props.usuario.telefono }}</p>
       <p><strong>Email:</strong> {{ props.usuario.email }}</p>
-      <p><strong>Disponible:</strong> {{ props.usuario.disponible ? 'Sí' : 'No' }}</p>
+      <p><strong>Disponible:</strong> {{ props.usuario.disponible }}</p>
     </div>
     <button
       @click="handleRemove"

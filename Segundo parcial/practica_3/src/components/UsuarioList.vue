@@ -9,12 +9,12 @@ interface Props {
 const props = defineProps<Props>()
 
 const emit = defineEmits<{
-  'toggle-estado': [usuarioId: number]
+  'toggle-disponible': [usuarioId: number]
   'remove-usuario': [usuarioId: number]
 }>()
 
-const handleToggleEstado = (usuarioId: number) => {
-  emit('toggle-estado', usuarioId)
+const handleToggleDisponible = (usuarioId: number) => {
+  emit('toggle-disponible', usuarioId)
 }
 
 const handleRemoveUsuario = (usuarioId: number) => {
@@ -32,7 +32,7 @@ const handleRemoveUsuario = (usuarioId: number) => {
         v-for="usuario in props.usuarios"
         :key="usuario.id"
         :usuario="usuario"
-        @toggle-estado="handleToggleEstado"
+        @toggle-disponible="handleToggleDisponible"
         @remove-usuario="handleRemoveUsuario"
       />
     </div>

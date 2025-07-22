@@ -1,5 +1,72 @@
-# Vue 3 + TypeScript + Vite
+Práctica 3 - Gestión de Usuarios, Bares y Bebidas con Vue 3 + TypeScript
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Objetivo
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+- Aplicar la separación de componentes en "contenedores" e "inteligentes".
+- Usar `ref`, `computed`, `v-model`, `v-if`, `v-for`, y eventos personalizados.
+- Manejar datos de usuarios, bares y bebidas usando listas reactivas.
+- Implementar formularios con validación básica.
+- Reforzar buenas prácticas en Vue 3 + TS.
+
+## 🧩 Estructura
+src/
+│
+├── components/
+│ ├── AddUsuarioForm.vue
+│ ├── UsuarioItem.vue
+│ ├── UsuarioList.vue
+│ ├── AddBarForm.vue
+│ ├── BarItem.vue
+│ ├── BarList.vue
+│ ├── AddBebidaForm.vue
+│ ├── BebidaItem.vue
+│ └── BebidaList.vue
+│
+├── views/
+│ ├── UsuarioView.vue
+│ ├── BaresView.vue
+│ └── BebidasView.vue
+│
+├── types/
+│ ├── Usuario.ts
+│ ├── Bar.ts
+│ └── Bebida.ts
+│
+└── App.vue
+
+Funcionalidades
+
+Usuarios
+- Añadir usuarios con nombre.
+- Cambiar estado (activo/inactivo).
+- Contador de usuarios activos.
+- Eliminar usuarios.
+
+Bares
+- Agregar bares con nombre, ubicación, horario, teléfono e imagen.
+- Marcar como abierto/cerrado.
+- Ver bares abiertos.
+- Eliminar bares.
+
+Bebidas
+- Añadir bebidas con nombre, descripción, imagen, precio y stock.
+- Mostrar información completa.
+- Eliminar bebida de la lista.
+
+Técnicas usadas
+
+- Componentes reutilizables.
+- Eventos personalizados (`@add-*`, `@remove-*`, `@toggle-*`).
+- Reactividad con `ref()` y `computed()`.
+- Tipado fuerte con interfaces en carpeta `types/`.
+- Estilos `scoped` y diseño responsive simple.
+- Uso de `v-if` para mostrar mensajes cuando las listas están vacías.
+
+Ejecución
+
+npm install
+npm run dev
+
+Delgado Cuadros ----->Bares
+Velez Diego ------->Bebidas
+Cevallos David ---->Usuarios

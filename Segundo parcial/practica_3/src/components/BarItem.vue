@@ -17,8 +17,13 @@ interface Props {
 const props = defineProps<Props>()
 
 const emit = defineEmits<{
+  'toggle-abierto': [id: number]
   'remove-bar': [id: number]
 }>()
+
+const handleToggleAbierto = () => {
+  emit('toggle-abierto', props.bar.id)
+}
 
 const handleRemove = () => {
   emit('remove-bar', props.bar.id)
@@ -26,9 +31,17 @@ const handleRemove = () => {
 </script>
 
 <template>
-  <div class="bar-item">
+  <div class="bar-item":class="{ cerrado: !props.bar.abierto }">
     <!-- Contenedor principal del bar -->
     <div class="bar-content">
+      <input
+        type="checkbox"
+        :checked="props.bar.abierto"
+        @change="handleToggleAbierto"
+        class="bar-checkbox"
+        :id="`bar-${props.bar.id}`"
+        :aria-label="`Marcar bar '${props.bar.nombre}' como ${props.bar.abierto ? 'cerrado' : 'abierto'}`"
+      />
       <img 
         :src="props.bar.imageUrl" 
         :alt="props.bar.nombre"
@@ -141,5 +154,10 @@ const handleRemove = () => {
   .bar-item {
     padding: 0.75rem;
   }
+  .bar-item.cerrado {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
 }
 </style>
