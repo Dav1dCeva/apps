@@ -1,0 +1,41 @@
+{
+  "gasolinas": [
+    {
+      "id": 1,
+      "tipo": "Premium",
+      "precioPorLitro": 25.5,
+      "cantidadDisponible": 10000,
+      "estado": "activo"
+    }
+  ],
+  "operadores": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "ubicacion": "Estación Central",
+      "telefono": "555-1234",
+      "correo": "juan.perez@email.com",
+      "licencia": "ABC123",
+      "estado": "activo"
+    }
+  ],
+  "surtidores": [
+    {
+      "id": 1,
+      "nombre": "Surtidor 1",
+      "tipoCombustible": "Premium",
+      "precioPorLitro": 25.5,
+      "capacidadTanque": 5000,
+      "estado": "activo"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Ana López",
+      "ubicacion": "Colonia Centro",
+      "telefono": "555-5678",
+      "correo": "ana.lopez@email.com"
+    }
+  ]
+}

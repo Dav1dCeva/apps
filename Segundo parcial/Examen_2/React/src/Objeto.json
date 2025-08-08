@@ -1,0 +1,60 @@
+{
+  "gasolinas": [
+    {
+      "id": 1,
+      "tipo": "Premium",
+      "precioPorLitro": 25.5,
+      "stockLitro": 10000,
+      "estado": "activo"
+    },
+    {
+      "id": 2,
+      "tipo": "Regular",
+      "precioPorLitro": 22.0,
+      "stockLitro": 8000,
+      "estado": "activo"
+    }
+  ],
+  "operadores": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "ubicacion": "Estación Central",
+      "turno": "matutino",
+      "correo": "juan.perez@email.com"
+    },
+    {
+      "id": 2,
+      "nombre": "María Gómez",
+      "ubicacion": "Estación Norte",
+      "telefono": "555-5678",
+      "turno": "vespertino",
+      "correo": "maria@gmail.com"
+    }
+  ],
+  "surtidores": [
+    {
+      "id": 1,
+      "nombre": "Surtidor 1",
+      "tipoCombustible": "Premium",
+      "ubicacion": "Estación Central",
+      "estado": "activo"
+    },
+    {
+      "id": 2,
+      "nombre": "Surtidor 2",
+      "tipoCombustible": "Regular",
+      "ubicacion": "Estación Norte",
+      "estado": "inactivo"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Ana López",
+      "ubicacion": "Colonia Centro",
+      "telefono": "555-5678",
+      "correo": "ana.lopez@email.com"
+    }
+  ]
+}
